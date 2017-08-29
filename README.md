@@ -10,10 +10,10 @@ While Node's built-in `fs` package works well for many file system operations, r
 
 `filePath` is the path to the file or folder to be removed.
 
-`options` is an optional object of rimraf options. To see all available options, click [here](https://www.npmjs.com/package/rimraf#options).
+`options` is an optional object of `rimraf` options. To see all available options, click [here](https://www.npmjs.com/package/rimraf#options).
 
 **Manual Promise handling usage example:**
-```
+```js
 rmrf('some-file-path')
     .then(() => {
         // success!
@@ -24,7 +24,7 @@ rmrf('some-file-path')
 ```
 
 **Async function usage example:**
-```
+```js
 async function() {
     try {
         await rmrf('some-file-path');
@@ -35,7 +35,7 @@ async function() {
 ```
 
 **Generator function usage example:**
-```
+```js
 co(function*() {
     try {
         yield rmrf('some-file-path');

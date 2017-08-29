@@ -17,6 +17,7 @@ $ npm install rmrf-promise
 
 `options` is an optional object of `rimraf` options. To see all available options, click [here](https://www.npmjs.com/package/rimraf#options).
 
+**Examples:**
 ```js
 const rmrf = require('rmrf-promise');
 

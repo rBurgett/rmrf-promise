@@ -4,6 +4,11 @@ The awesome [rimraf](https://www.npmjs.com/package/rimraf) package wrapped in Pr
 ## Why?
 While Node's built-in `fs` package works well for many file system operations, recursive folder deletion is somewhat inconsistent, especially in Windows. `rimraf` solved that problem by creating a library which can consistently remove folders. `rmrf-promise` does not add or take away anything from `rimraf` itself. All that `rmrf-promise` does is return Promises instead of taking callbacks when calling `rimraf`.
 
+## Installation
+```
+$ npm install rmrf-promise
+```
+
 ## Usage
 
 `rimraf(filePath, [options])`
@@ -12,8 +17,10 @@ While Node's built-in `fs` package works well for many file system operations, r
 
 `options` is an optional object of `rimraf` options. To see all available options, click [here](https://www.npmjs.com/package/rimraf#options).
 
-**Manual Promise handling usage example:**
 ```js
+const rmrf = require('rmrf-promise');
+
+// Usage with manual Promise handling
 rmrf('some-file-path')
     .then(() => {
         // success!
@@ -21,24 +28,22 @@ rmrf('some-file-path')
     .catch(err => {
         // handle error
     });
-```
 
-**Async function usage example:**
-```js
+// Usage within an sync function
 async function() {
     try {
         await rmrf('some-file-path');
+        // success!
     } catch(err) {
         // handle error
     }
 };
-```
 
-**Generator function usage example:**
-```js
+// Usage within a generator function
 co(function*() {
     try {
         yield rmrf('some-file-path');
+        // success!
     } catch(err) {
         // handle error
     }
